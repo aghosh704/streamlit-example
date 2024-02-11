@@ -17,3 +17,5 @@ path = 'https://raw.githubusercontent.com/TheEconomist/big-mac-data/master/outpu
 bigmac_df = pd.read_csv(path)
 bigmac_df_filtered = bigmac_df.loc[bigmac_df['name'] == country][['date', 'name', 'dollar_price']]
 st.line_chart(data=bigmac_df_filtered, x='date', y='dollar_price')
+
+st.write(f"Big mac prices in {country} over time")
