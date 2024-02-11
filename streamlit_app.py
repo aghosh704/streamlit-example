@@ -15,5 +15,5 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 path = 'https://raw.githubusercontent.com/TheEconomist/big-mac-data/master/output-data/big-mac-raw-index.csv'
 bigmac_df = pd.read_csv(path)
-bigmac_df_filtered = bigmac_df.loc[bigmac_df['name'] == 'Canada'][['name', 'dollar_price']]
-st.dataframe(bigmac_df_filtered)
+bigmac_df_filtered = bigmac_df.loc[bigmac_df['name'] == 'Canada'][['date', 'name', 'dollar_price']]
+st.line_chart(data=bigmac_df_filtered, x='date', y='dollar_price')
